@@ -21,7 +21,7 @@ db.once('open', function () {
   console.log('Connect to mongodb')
 });
 
-app.use('/', routes)
-app.use(errHandler)
 
-app.listen(port, () => console.log(`You listen on port port`))
+app.listen(PORT, function () {
+    console.log(`LISTENING TO PORT ${PORT}`)
+})
