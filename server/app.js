@@ -1,24 +1,26 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const mogran = require('morgan')
-const port = 3000
-const app = express()
-const errHandler = require('./middlewares/errHandler')
-const routes = require('./routes')
+require('dotenv').config()
+const express = require('express');
+const cors = require('cors')
+const app = express();
+const PORT = 8000;
+const mongoose = require('mongoose');
+const router = require("./routes")
+app.use(cors())
+mongoose.connect('mongodb://localhost:27017/hacktiv8git', {useNewUrlParser: true}, (err) => {
+    if (err) {
+        console.log(err)
+    }
+    else {
+        console.log("MONGOOSE SUCCESS CONNECTED")
+    }
+})
 
-app.use(mogran('dev'))
-app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-// Check Connection
-mongoose.connect('mongodb://localhost:27017/mongoose-glory',  {useNewUrlParser: true})
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-  console.log('Connect to mongodb')
-});
+app.use('/', router)
 
-app.use('/', routes)
-app.use(errHandler)
 
-app.listen(port, () => console.log(`You listen on port port`))
+app.listen(PORT, function () {
+    console.log(`LISTENING TO PORT ${PORT}`)
+})
