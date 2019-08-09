@@ -4,7 +4,7 @@ const FootballController = require("../controllers/footballcontroller")
 
 
 router.get('/teams', FootballController.getList)
-router.post('/teams', FootballController.getTeam)
+router.get('/teams/:teamId', FootballController.getProfile)
 
 
 

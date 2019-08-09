@@ -28,8 +28,8 @@ class FootballController {
         })
     }
 
-    static getTeam(req, res, next) {
-        const teamId = req.body.teamId;
+    static getProfile(req, res, next) {
+        const teamId = req.params.teamId;
         axios({
             method: 'GET',
             url: `${base_url}/teams/${teamId}`,
@@ -37,8 +37,16 @@ class FootballController {
                 "X-Auth-Token": process.env.TOKEN
             }
         })
-        .then(team => {
-            res.status(200).json(team.data)
+        .then(({ data }) => {
+
+            const arrayOfSquad = data.squad.map((el) => {
+                return {
+                    name: el.name,
+                    position: el.position,
+                    nationality: el.nationality
+                }
+            })
+            res.status(200).json(arrayOfSquad)
         })
         .catch(err => {
             res.status(404),json({
