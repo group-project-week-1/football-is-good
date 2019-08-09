@@ -1,0 +1,61 @@
+body {
+  background: url(./login-pic-2.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+.main-section-login-form {
+	margin: 0 auto;
+	margin-top: 130px;
+	padding: 0;
+}
+
+.modal-content {
+	background-color: #F9EEDC;
+	opacity: 0.9;
+	padding: 0 18px;
+	border-radius: 10px;
+}
+
+.user-img img {
+	height: 120px;
+	width: 120px;
+}
+
+.user-img {
+	margin-top: -60px;
+	margin-bottom: 45px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+  border: 1px solid burlywood
+}
+
+.form-group input {
+	height: 42px;
+	border-radius: 5px;
+	border: 0;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.btn-sm {
+	font-size: 14px;
+  border-radius: 5px;
+  margin: 5px 0 10px;
+  border: 1px solid #daf1ff;
+  width: 30%;
+}
+
+.register {
+	padding: 5px 0 10px;
+}
+
+.register a {
+	color: black;
+}
+
+.google-signin {
+  padding: 5px 0 25px;
+  padding-top: 20px;
+}
