@@ -8,6 +8,7 @@ const app = express()
 const errHandler = require('./middlewares/errHandler')
 const routes = require('./routes')
 
+
 app.use(cors())
 app.use(mogran('dev'))
 app.use(express.json())
