@@ -5,11 +5,9 @@ const ax = axios.create({
 
 class newsController {
     static getNews(req, res, next){
-        console.log('################### masuk fetch');
         ax
         .get(`/everything?q=${req.params.title}&language=${req.params.language}&sortBy=publishedAt&apiKey=${process.env.API_KEY}`, {headers : { Authorization : process.env.API_KEY} })
         .then(({data}) => {
-            // console.log('adlkjflksdfkdlaflkdsjfa', data);
             res.status(200).json(data.articles)
         })
         .catch(err => {
@@ -19,7 +17,6 @@ class newsController {
     }
 
     static getNewsCountry(req, res, next) {
-        console.log('masuk siniiii')
         ax
         .get(`/top-headlines?country=${req.params.country}&apiKey=${process.env.API_KEY}`)
         .then(({data}) => {
@@ -27,25 +24,10 @@ class newsController {
         })
         .catch(err => {
             console.log(err.response,'response')
-            next(err)
+
         })
     }
 
-    static findKeywordWithTopHeadlines(req, res, next) {
-        console.log('masuk headline keyword')
-        const keyWord = req.params.keyWord
-        const regex = new RegExp(`${keyWord}`, 'i')
-        console.log(keyWord)
-        ax.get(`/top-headlines?q=${keyWord}&apiKey=${process.env.API_KEY}`, {headers : { Authorization : process.env.API_KEY}} )
-        .then(({data}) => {
-            const match = data.articles.filter((el) => el.description.match(regex))
-            res.status(200).json(match)
-        })
-        .catch(err => {
-            console.log(err.response,'response')
-            next(err)
-        })
-    }
 
     static getNewsCountryCategory(req, res, next) {
         console.log('masuk siniiii')
@@ -64,7 +46,10 @@ class newsController {
         const keyWord = req.params.keyWord
         const regex = new RegExp(`${keyWord}`, 'i')
 
+
+
         ax.get(`/everything?q=${keyWord}&language=${req.params.language}&sortBy=publishedAt&apiKey=${process.env.API_KEY}`, {headers : { Authorization : process.env.API_KEY}} )
+
         .then(({data}) => {
             console.log(data.articles)
             const match = data.articles.filter((el) => el.title.match(regex))

@@ -1,6 +1,6 @@
 body {
-  background: url(./login-pic-2.jpg) no-repeat center fixed;
-  background-size: cover;
+	background: url(./login-pic-2.jpg) no-repeat center fixed;
+	background-size: cover;
 }
 
 .main-section-login-form {
@@ -27,8 +27,8 @@ body {
 }
 
 .form-group {
-  margin-bottom: 5px;
-  border: 1px solid burlywood
+	margin-bottom: 5px;
+	border: 1px solid burlywood
 }
 
 .form-group input {
@@ -41,10 +41,10 @@ body {
 
 .btn-sm {
 	font-size: 14px;
-  border-radius: 5px;
-  margin: 5px 0 10px;
-  border: 1px solid #daf1ff;
-  width: 30%;
+	border-radius: 5px;
+	margin: 5px 0 10px;
+	border: 1px solid #daf1ff;
+	width: 30%;
 }
 
 .register {
@@ -56,6 +56,36 @@ body {
 }
 
 .google-signin {
-  padding: 5px 0 25px;
-  padding-top: 20px;
+	padding: 5px 0 25px;
+	padding-top: 20px;
+}
+
+.kalim {
+	display: flex;
+	max-width: 100px;
+	max-height: 100px;
+	margin: 2px auto;
+}
+
+.kalim img {
+	width: auto;
+	height: 100px;
+	text-align: center;
+}
+
+.kalim img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.kalim:hover img {
+	opacity: 0.5;
+}
+
+#image-thum {
+	display: flex;
+	max-width: 200px;
+	max-height: 200px;
+	margin: 1px auto;
 }

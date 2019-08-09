@@ -1,3 +1,6 @@
+$('#form-login').hide()
+$('#form-register').hide()
+
 function onSignIn(googleUser) {
   const id_token = googleUser.getAuthResponse().id_token;
 
@@ -21,9 +24,8 @@ function register() {
   $('#form-login').hide()
   $('#form-register').show()
 
-  $('#new-user-form').submit(function() {
+  $('#new-user-form').submit(function () {
     event.preventDefault();
-    console.log($('#fullName').val())
     axios({
       url: 'http://localhost:3000/register/signup',
       method: 'post',
@@ -33,7 +35,7 @@ function register() {
         password: $('#passeord').val()
       }
     })
-   
+
   });
 
 }
@@ -44,6 +46,6 @@ function login() {
   event.preventDefault()
 }
 
-$(document).ready(function () {
-  login()
-})
+// $(document).ready(function () {
+//   login()
+// })

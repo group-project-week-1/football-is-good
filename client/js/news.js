@@ -19,6 +19,7 @@ function getNews(){
         }
         else{
             for(let news of response){
+
                 console.log(news)
                 $('#news').append(`<div class="card" style="width: 18rem; height: auto display:flex;">
                 <img class="card-img-top" style="width: 300px; height: 300px" src="${news.urlToImage}" alt="Card image cap">
@@ -103,9 +104,11 @@ function getTopKeyword() {
 }
 
 
+
 $(document).ready(function() {
     console.log('MASUK')
     getNews()
+
     console.log('pisah')
     getNewsByCountry()
     console.log('jangan pisahkan aku')

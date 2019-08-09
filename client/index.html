@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +35,8 @@
               </div>
 
               <div class="register d-flex justify-content-start">
-                <small style="font-weight: bold"> Not a member? </small> <small><a href="" onclick="register()"> &nbsp;
+                <small style="font-weight: bold"> Not a member? </small> <small><a href="" onclick="register()">
+                    &nbsp;
                     register</a></small>
               </div>
 
@@ -53,7 +53,6 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
 
   </div>
 
@@ -73,15 +72,18 @@
 
             <form id="new-user-form">
               <div class="form-group">
-                <input type="text" id="fullName" class="form-control" placeholder="Full Name" autocomplete="off" autofocus required>
+                <input type="text" id="fullName" class="form-control" placeholder="Full Name" autocomplete="off"
+                  autofocus required>
               </div>
 
               <div class="form-group">
-                <input type="email" id="email" class="form-control" placeholder="Enter Email" autocomplete="off" autofocus required>
+                <input type="email" id="email" class="form-control" placeholder="Enter Email" autocomplete="off"
+                  autofocus required>
               </div>
 
               <div class="form-group">
-                <input type="password" id="password" class="form-control" placeholder="Enter password" autocomplete="off" autofocus required>
+                <input type="password" id="password" class="form-control" placeholder="Enter password"
+                  autocomplete="off" autofocus required>
               </div>
 
               <div class="form-group">
@@ -99,17 +101,100 @@
   <!-- End Register -->
   <!--News-->
 
+  <!-- HOME PAGE -->
+
+  <div id="main-home-page">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Football</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"> Teams </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> News </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="highlight()" href="#"> Highlight </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">User</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="teams" style="background-color: white">
+      <div class="container">
+        <div class="row" id="team-list">
+          <!-- card teams -->
+
+        </div>
+      </div>
+    </div>
+    <a href=""> </a>
+  </div>
+
+
+  <!-- END HOME PAGE -->
+
+  <!-- HIGHLIGHT -->
+  <div id="high" style="background-color: white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Football</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Teams </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> News </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#"> Highlight </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">User</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="highlit">
+      <div class="container">
+        <div class="container">
+          <div class="row" id="high">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- END HIGHLIGHT -->
+
   <!-- script -->
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+
   <script src="./form-login-regis.js"> </script>
   <script src="./js/football.js"></script>
   <script src="./js/news.js"></script>
->>>>>>> prepare
 </body>
->>>>>>> development
+
 
 </html>
