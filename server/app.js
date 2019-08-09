@@ -5,8 +5,9 @@ const mogran = require('morgan')
 const cors = require('cors');
 const port = process.env.PORT || 3000
 const app = express()
-const errHandler = require('./middlewares/errHandler')
-const routes = require('./routes')
+// const errHandler = require('./middlewares/errHandler')
+// const routes = require('./routes')
+const news = require('./routes/news')
 
 app.use(cors())
 app.use(mogran('dev'))
@@ -21,7 +22,7 @@ db.once('open', function () {
   console.log('Connect to mongodb')
 });
 
+app.use('/', routes)
+app.use(errHandler)
 
-app.listen(PORT, function () {
-    console.log(`LISTENING TO PORT ${PORT}`)
-})
+app.listen(process.env.PORT, () => console.log(`You listen on port ${process.env.PORT}`))
