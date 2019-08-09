@@ -1,7 +1,8 @@
 const {OAuth2Client} = require('google-auth-library');
 const client = new OAuth2Client(process.env.GOOGLE_ACCESS_CLIENT_ID);
 const User = require('../models/user');
-const generateToken = require('../helpers/generateToken');  
+const generateToken = require('../helpers/generateToken'); 
+const hash = require('../helpers/bcrypt'); 
 
 class UserController {
 
@@ -24,11 +25,10 @@ class UserController {
           User.create({
             fullName: isUser.payload.name,
             email: isUser.payload.email,
-            password: process.env.NEW_USER_PASSWORD,
+            password: hash(process.env.NEW_USER_PASSWORD),
             picture: isUser.payload.picture
           })
         } else {
-          // console.log(found);
           const user = {
             fullName: found.fullName,
             email: found.email,
