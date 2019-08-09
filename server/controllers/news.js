@@ -5,11 +5,9 @@ const ax = axios.create({
 
 class newsController {
     static getNews(req, res, next){
-        console.log('################### masuk fetch');
         ax
         .get(`/everything?q=${req.params.title}&sortBy=publishedAt&apiKey=${process.env.API_KEY}`, {headers : { Authorization : process.env.API_KEY} })
         .then(({data}) => {
-            // console.log('adlkjflksdfkdlaflkdsjfa', data);
             res.status(200).json(data.articles)
         })
         .catch(err => {
@@ -20,7 +18,6 @@ class newsController {
     }
 
     static getNewsCountry(req, res, next) {
-        console.log('masuk siniiii')
         ax
         .get(`/top-headlines?country=${req.params.country}&apiKey=${process.env.API_KEY}`)
         .then(({data}) => {
@@ -28,12 +25,10 @@ class newsController {
         })
         .catch(err => {
             console.log(err.response,'response')
-            // next(err)
         })
     }
 
     static getNewsCountryCategory(req, res, next) {
-        console.log('masuk siniiii')
         ax
         .get(`/top-headlines?country=${req.params.country}&category=${req.params.category}&apiKey=${process.env.API_KEY}`)
         .then(({data}) => {
@@ -79,7 +74,6 @@ class newsController {
     static findKeywordWithTopHeadlines(req, res, next) {
         const keyWord = req.params.keyWord
         const regex = new RegExp(`${keyWord}`, 'i')
-        // const taskRegex = new RegExp(req.params.name, 'i')
         console.log(keyWord)
         ax.get(`/top-headlines?q=${keyWord}&apiKey=${process.env.API_KEY}`, {headers : { Authorization : process.env.API_KEY}} )
         .then(({data}) => {

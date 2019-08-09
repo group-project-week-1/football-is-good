@@ -5,9 +5,8 @@ const mogran = require('morgan')
 const cors = require('cors');
 const port = process.env.PORT || 3000
 const app = express()
-// const errHandler = require('./middlewares/errHandler')
-// const routes = require('./routes')
-const news = require('./routes/news')
+const errHandler = require('./middlewares/errHandler')
+const routes = require('./routes')
 
 app.use(cors())
 app.use(mogran('dev'))
