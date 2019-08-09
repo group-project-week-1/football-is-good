@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/login.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-signin-client_id"
+    content="51271843615-lr6pn1k1iccrdhub6tfqr5hk3i47pcmi.apps.googleusercontent.com">
+  <title>Football-is-good</title>
+</head>
+
+<body>
+
+  <!-- Form Login -->
+
+  <div id="form-login">
+    <div class="modal-dialog text-center">
+      <div class="col-sm-9 main-section-login-form">
+        <div class="modal-content">
+          <div class="col-12 user-img">
+            <img src="../css/face.png" alt="">
+          </div>
+
+          <div class="col-12 form-input">
+            <form action="">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Enter Email">
+              </div>
+
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Enter password">
+              </div>
+
+              <div class="register d-flex justify-content-start">
+                <small style="font-weight: bold"> Not a member? </small> <small><a href="" onclick="register()"> &nbsp;
+                    register</a></small>
+              </div>
+
+              <div>
+                <button type="submit" class="btn btn-secondary btn-sm">Login</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="google-signin d-flex justify-content-center">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- End Form Login -->
+
+  <!-- Register -->
+
+  <div id="form-register">
+    <div class="modal-dialog text-center">
+      <div class="col-sm-9 main-section-login-form">
+        <div class="modal-content">
+          <div class="col-12 user-img">
+            <img src="./css/regis-pic.jpg" alt="">
+          </div>
+
+          <div class="col-12 form-input">
+
+            <form id="new-user-form">
+              <div class="form-group">
+                <input type="text" id="fullName" class="form-control" placeholder="Full Name" autocomplete="off" autofocus required>
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="email" class="form-control" placeholder="Enter Email" autocomplete="off" autofocus required>
+              </div>
+
+              <div class="form-group">
+                <input type="password" id="password" class="form-control" placeholder="Enter password" autocomplete="off" autofocus required>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-secondary btn-sm">Register</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- End Register -->
+
+  <!-- script -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="./form-login-regis.js"> </script>
+
+</body>
+
+</html>
